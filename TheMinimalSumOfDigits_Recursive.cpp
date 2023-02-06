@@ -1,6 +1,6 @@
 #include <iostream>
 
-int min;
+int min = 99999999, count = 0;
 
 int sumOfDigits(int number) {
     if (number < 10) return number;
@@ -8,9 +8,17 @@ int sumOfDigits(int number) {
 }
 
 int minimalSumOfDigits(int m, int n) {
-    
-    min = std::min(m, n);
-
+    for (int i = m; i <= n; i++) {
+        int sum = sumOfDigits(i);
+        if (sum == min) count++;
+        if (sum < min)
+        {
+            min = sum;
+            count = 1;
+        }
+        
+    }
+    return count;
 }
 
 int main() {
@@ -21,6 +29,6 @@ int main() {
 
     std::cin >> n;
 
-    std::cout << " " << std::endl;
+    std::cout << minimalSumOfDigits(m, n) << std::endl;
 
 }
