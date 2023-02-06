@@ -13,4 +13,5 @@ int main() {
 
     std::cout << numberOfDigits(abs(number)) << std::endl;
 
+    return 0;
 }

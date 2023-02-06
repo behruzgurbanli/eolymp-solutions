@@ -31,4 +31,5 @@ int main() {
 
     std::cout << minimalSumOfDigits(m, n) << std::endl;
 
+    return 0;
 }

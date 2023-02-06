@@ -13,4 +13,5 @@ int main() {
 
     std::cout << SumOfDigits(abs(number)) << std::endl;
 
+    return 0;
 }
