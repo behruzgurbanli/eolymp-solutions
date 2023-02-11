@@ -1,27 +1,34 @@
 #include <iostream>
 #include <string>
 
-int function(int n) {
-    if (n == 1) return n;
-    if (n % 2 == 0) return function(n / 2);
-    return function(n * 3 + 1);
+int t,k;
+
+int function(int x){
+    
+    if(x == 1) return 1;
+    
+    if(x%2==0) res=max(res,function(x/2));
+    
+    else res=max(res,function(3*x+1));
+    
+    return res;
 }
-
-int main() {
-    int t, n, setnumber, res[t][2];
+int main(){
     
-    std::cin >> t;
+    std::cin>>t;
+    
+    while(t--){
+    
+        int n;
 
-    for (int i = 0; i < t; i++)
-    {
-    std::cin >> setnumber;
-
-    std::cin >> n;
+        std::cin >> k >>n;
+        
+        std::cout <<k <<' '<< function(n)<< std::endl;
+    
     }
-
     
-
-    std::cout << std::endl;
-
     return 0;
 }
+
+
+
