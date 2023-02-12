@@ -1,4 +1,5 @@
 #include <iostream>
+#define MOD 1000000007
 
 
 long exponentiation(long x, int n, int m) {
@@ -8,16 +9,11 @@ long exponentiation(long x, int n, int m) {
 }
 
 int main() {
-    long x;
-    int n, m;
-
-    std::cin >> x;
+    int n;
 
     std::cin >> n;
 
-    std::cin >> m;
-
-    std::cout << exponentiation(x, n, m) << std::endl;
+    std::cout << (exponentiation(n - 1, n - 1, MOD) * n) % MOD << std::endl;
 
     return 0;
 }

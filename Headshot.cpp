@@ -1,3 +1,26 @@
+// Consider and correct by comparing full or partial reloading
+
+// #include <stdio.h>
+
+// int main ()
+// {
+//     long long n, m, a, b;
+//     scanf("%lld %lld %lld %lld", &n, &m, &a, &b);
+    
+//     if (a < m * b) a = a;
+//     else a = m * b;
+    
+//     long long time, reload_time, add_time;
+    
+//     reload_time = (n / m) * a;
+//     if (a < ((n % m) * b)) add_time = a;
+//     else add_time = ((n % m) * b);
+    
+//     time = reload_time + add_time + n;
+//     printf ("%lld\n", time);
+    
+// }
+
 #include <iostream>
 
 int function(int n, int m, int a, int b) {
