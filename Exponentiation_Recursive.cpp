@@ -1,14 +1,13 @@
 #include <iostream>
 
-
-long long int exponentiation(long long int x, int n) {
+long exponentiation(long x, int n) {
     if (n == 0) return 1;
     if (n % 2 == 0) return exponentiation(x * x, n / 2);
     return x * exponentiation(x, n - 1);
 }
 
 int main() {
-    int x, n;
+    long x, n;
 
     std::cin >> x;
 

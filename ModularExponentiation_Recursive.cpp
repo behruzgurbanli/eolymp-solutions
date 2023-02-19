@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 long exponentiation(long x, int n, int m) {
     if (n == 0) return 1;
     if (n % 2 == 0) return exponentiation((x * x) % m, n / 2, m);
