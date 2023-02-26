@@ -2,6 +2,9 @@
 *.out
 *.exe
 
+# Files
+input.txt
+
 # Directory
 out/
 .vscode/

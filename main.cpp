@@ -1,28 +1,29 @@
 #include <iostream>
+#include <cmath>
 
-using namespace std;
+int dp[1000001];
+int n;
 
-void prime_factorize(int n) {
-    long cnt;
-    for (int i = 2; i <= n / i; i++) {
-        cnt = 0;
-        while (n % i == 0) {
-            cnt++;
-            n /= i;
-        }
-        if (cnt > 0) {
-            cout << i;
-            if (cnt > 1) cout << "^" << cnt;
-            if (n > 1) cout << "*";
-        }
-    }
-    if (n > 1) cout << n;
-    cout << endl;
+long function(long n) {
+    if(n == 0) return 1;
+
+    if(dp[n] != -1) return dp[n];
+
+    int a = function((int)(n - sqrt(n)));
+    int b = function((int)(log(n)));
+    int c = function((int)(n * sin(n) * sin(n)));
+    
+    return dp[n] = (a + b + c) % 98765;
 }
 
 int main() {
-    long n;
-    cin >> n;
-    prime_factorize(n);
+    freopen("input.txt", "r", stdin);
+    memset(dp, -1, sizeof(dp));
+
+    while (std::cin >> n && n != -1)
+    {
+        std::cout << function(n) << std::endl;
+    }
+    
     return 0;
 }
